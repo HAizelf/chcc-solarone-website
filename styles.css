@@ -368,10 +368,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-logo {
-    max-height: 65px;
+    max-height: 70px;
     width: auto;
     display: block;
+    margin-left: -40px;
 }
+
 
 .logo-link {
     display: inline-block;
