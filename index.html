@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Center of Excellence Human-Centered Computing</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-new.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 <body>
     <!-- Header -->
@@ -22,232 +25,424 @@
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="events/">Events</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
-    <!-- Hero Section -->
+    <!-- Hero Section (Banner Carousel) with Integrated Tagline -->
     <section class="hero-section alignfull">
+        <div class="carousel-container">
+            <!-- Banner 1 -->
+            <div class="banner-container active">
+                <div class="banner-content">
+                    <div class="banner-text">
+                        <h1 class="banner-title">R&D SHOWCASE</h1>
+                        <h2 class="banner-subtitle">TAKING RESEARCH FROM LAB TO LAND</h2>
+                        <a href="#about" class="banner-button">Explore Our Work <span class="arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="banner-image">
+                    <img src="https://via.placeholder.com/1200x600/333/fff?text=Research+Team" alt="Research Team" class="hero-image">
+                </div>
+            </div>
+            
+            <!-- Banner 2 -->
+            <div class="banner-container">
+                <div class="banner-content">
+                    <div class="banner-text">
+                        <h1 class="banner-title">INNOVATION HUB</h1>
+                        <h2 class="banner-subtitle">CREATING TOMORROW'S SOLUTIONS TODAY</h2>
+                        <a href="#services" class="banner-button">Our Capabilities <span class="arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="banner-image">
+                    <img src="https://via.placeholder.com/1200x600/0056b3/fff?text=Innovation+Lab" alt="Innovation Lab" class="hero-image">
+                </div>
+            </div>
+            
+            <!-- Banner 3 -->
+            <div class="banner-container">
+                <div class="banner-content">
+                    <div class="banner-text">
+                        <h1 class="banner-title">COLLABORATIVE RESEARCH</h1>
+                        <h2 class="banner-subtitle">PARTNERING FOR GREATER IMPACT</h2>
+                        <a href="#contact" class="banner-button">Partner With Us <span class="arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="banner-image">
+                    <img src="https://via.placeholder.com/1200x600/003057/fff?text=Collaboration" alt="Collaboration" class="hero-image">
+                </div>
+            </div>
+            
+            <!-- Carousel Navigation -->
+            <div class="carousel-indicators">
+                <button class="indicator active" aria-label="Slide 1"></button>
+                <button class="indicator" aria-label="Slide 2"></button>
+                <button class="indicator" aria-label="Slide 3"></button>
+            </div>
+            
+            <!-- Carousel Controls -->
+            <button class="carousel-control prev" aria-label="Previous slide">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+                </svg>
+            </button>
+            <button class="carousel-control next" aria-label="Next slide">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Integrated Tagline Bar -->
+        <div class="tagline-bar">
+            <div class="container">
+                <div class="tagline-text">Developing <span class="highlight">user-centric</span> solutions for tomorrow</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section id="about" class="metrics-section alignfull">
         <div class="grid-container alignwide">
-            <div class="grid-item grid-col-start-1 grid-col-end-7 align-self-start">
-                <div class="hero-content">
-                    <p class="accent-text">Excellence in Research & Application</p>
-                    <h2 class="hero-title">Center of Excellence Human-Centered Computing</h2>
-                    <div class="hero-cta-container">
-                        <div class="hero-button-wrapper">
-                            <a href="#services" class="button button-dark">Explore Services</a>
+            <div class="metrics-container grid-item grid-col-start-2 grid-col-end-12">
+                <div class="metrics-grid">
+                    <div class="metric-item fade-in">
+                        <div class="metric-number" data-count="4">0</div>
+                        <div class="metric-label">Research Projects</div>
+                    </div>
+                    <div class="metric-item fade-in">
+                        <div class="metric-number" data-count="50">0</div>
+                        <div class="metric-label">Publications</div>
+                    </div>
+                    <div class="metric-item fade-in">
+                        <div class="metric-number" data-count="10">0</div>
+                        <div class="metric-label">Industry Partners</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News and Twitter Section -->
+    <section id="news" class="news-section alignfull">
+        <div class="grid-container alignwide">
+            <div class="grid-item grid-col-start-2 grid-col-end-12 text-center">
+                <h2 class="section-title">News & Announcements</h2>
+            </div>
+            <div class="grid-item grid-col-start-2 grid-col-end-8">
+                <div class="news-content">
+                    <article class="news-item featured">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/600x300/003057/fff?text=Research+Grant" alt="Research Grant">
                         </div>
-                        <div class="hero-text-wrapper">
-                            <p class="hero-text">We help organizations create more intuitive, accessible, and effective technology solutions.</p>
+                        <div class="news-content-container">
+                            <div class="news-date">May 15, 2023</div>
+                            <h3 class="news-title">New Research Grant Awarded</h3>
+                            <p class="news-excerpt">Our center has been awarded a $2.5 million grant to research advanced human-computer interaction techniques for accessibility. This funding will support our work on developing new interfaces for users with visual impairments.</p>
+                            <a href="#" class="read-more">Read More</a>
                         </div>
-                    </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-content-container">
+                            <div class="news-date">April 28, 2023</div>
+                            <h3 class="news-title">Publication in ACM CHI Conference</h3>
+                            <p class="news-excerpt">Our researchers presented three papers at the prestigious CHI conference, focusing on novel interaction techniques.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-content-container">
+                            <div class="news-date">March 10, 2023</div>
+                            <h3 class="news-title">Industry Partnership Announcement</h3>
+                            <p class="news-excerpt">We're excited to announce a new partnership with TechInnovate to develop user-centered AI solutions.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
                 </div>
             </div>
-            <div class="grid-item grid-col-start-7 grid-col-end-13 align-self-start">
-                <figure class="image-wrapper">
-                    <img src="https://themes.ainoblocks.io/solarone/wp-content/uploads/sites/4/2023/02/solarone-hero-01.png" alt="Human-Centered Computing Visualization">
-                </figure>
-            </div>
-        </div>
-    </section>
-
-    <!-- Feature Icons Section -->
-    <section class="feature-icons-section alignfull">
-        <div class="grid-container alignwide">
-            <div class="grid-item grid-col-start-3 grid-col-end-5">
-                <div class="flex-container flex-row align-items-center">
-                    <div class="flex-item">
-                        <figure class="icon-circle">
-                            <img src="http://themes.ainoblocks.io/solarone/wp-content/uploads/sites/4/2023/02/icon-circle-01.png" alt="Research" width="64" height="64">
-                        </figure>
-                    </div>
-                    <div class="flex-item pl-9">
-                        <p class="pt-1">Research-driven methodologies</p>
+            <div class="grid-item grid-col-start-8 grid-col-end-12">
+                <div class="twitter-feed">
+                    <h3 class="twitter-title">
+                        <svg class="x-logo" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                        </svg>
+                        Latest Updates
+                    </h3>
+                    <div class="twitter-embed">
+                        <a class="twitter-timeline" 
+                           data-height="300" 
+                           data-theme="light" 
+                           data-chrome="noheader nofooter noborders transparent"
+                           data-tweet-limit="2"
+                           href="https://twitter.com/GeorgiaTech">
+                           Updates by HCC Center
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="grid-item grid-col-start-5 grid-col-end-6 desktop-only">
-                <figure class="arrow-icon">
-                    <img src="http://themes.ainoblocks.io/solarone/wp-content/uploads/sites/4/2023/02/arrow.png" alt="Arrow" width="13" height="24">
-                </figure>
-            </div>
-            <div class="grid-item grid-col-start-6 grid-col-end-8">
-                <div class="flex-container flex-row align-items-center">
-                    <div class="flex-item">
-                        <figure class="icon-circle">
-                            <img src="http://themes.ainoblocks.io/solarone/wp-content/uploads/sites/4/2023/02/icon-circle-02.png" alt="Innovation" width="64" height="64">
-                        </figure>
+                
+                <div class="upcoming-events">
+                    <h3 class="upcoming-events-title">Upcoming Events</h3>
+                    <div class="event-mini">
+                        <div class="event-mini-date">June 15, 2023</div>
+                        <div class="event-mini-title">Workshop on Human-AI Interaction</div>
+                        <p>A half-day workshop exploring the latest techniques in human-AI collaboration.</p>
                     </div>
-                    <div class="flex-item pl-9">
-                        <p class="pt-1">Innovative design solutions</p>
+                    <div class="event-mini">
+                        <div class="event-mini-date">July 8, 2023</div>
+                        <div class="event-mini-title">Summer Research Symposium</div>
+                        <p>Undergraduate students present their summer research projects.</p>
                     </div>
-                </div>
-            </div>
-            <div class="grid-item grid-col-start-8 grid-col-end-9 desktop-only">
-                <figure class="arrow-icon">
-                    <img src="http://themes.ainoblocks.io/solarone/wp-content/uploads/sites/4/2023/02/arrow.png" alt="Arrow" width="13" height="24">
-                </figure>
-            </div>
-            <div class="grid-item grid-col-start-9 grid-col-end-11">
-                <div class="flex-container flex-row align-items-center">
-                    <div class="flex-item">
-                        <figure class="icon-circle">
-                            <img src="http://themes.ainoblocks.io/solarone/wp-content/uploads/sites/4/2023/02/icon-circle-03.png" alt="User" width="64" height="64">
-                        </figure>
-                    </div>
-                    <div class="flex-item pl-9">
-                        <p class="pt-1">User-centered implementation</p>
-                    </div>
+                    <a href="events/" class="view-all-link">View All Events →</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section alignfull">
-        <div class="grid-container alignwide">
-            <div class="grid-item grid-col-start-3 grid-col-end-11 text-center">
-                <h2 class="section-title">Advancing Human-Technology Interaction</h2>
-                <p class="section-text">We specialize in human-centered computing, conducting research that enhances design practices and promotes user-centric solutions in technology and interaction.</p>
-            </div>
-            <div class="grid-item grid-col-start-2 grid-col-end-12">
-                <figure class="video-wrapper">
-                    <img src="https://themes.ainoblocks.io/solarone/wp-content/uploads/sites/4/2023/02/solarone-featured-wide.png" alt="Human-Centered Computing" class="featured-image">
-                </figure>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services-section alignfull">
-        <div class="grid-container alignwide">
-            <div class="grid-item grid-col-start-2 grid-col-end-6 align-self-center">
-                <p class="section-tag">Our Services</p>
-                <h2 class="section-title">Expertise & Capabilities</h2>
-                <p class="section-text">We offer a range of services that leverage our expertise in human-centered computing.</p>
-                <div class="button-group">
-                    <a href="#contact" class="button button-dark">Work With Us</a>
-                    <a href="#about" class="button button-outline">Learn More</a>
-                </div>
-            </div>
-            <div class="grid-item grid-col-start-7 grid-col-end-12">
-                <figure class="image-wrapper">
-                    <img src="https://themes.ainoblocks.io/solarone/wp-content/uploads/sites/4/2023/02/solarone-featured-01.png" alt="Services">
-                </figure>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service Details Section -->
-    <section class="service-details-section alignfull">
-        <div class="grid-container alignwide">
-            <div class="grid-item grid-col-start-2 grid-col-end-7 align-self-start">
-                <figure class="image-wrapper">
-                    <img src="https://themes.ainoblocks.io/solarone/wp-content/uploads/sites/4/2023/02/solarone-featured-02.png" alt="Workshops">
-                </figure>
-            </div>
-
-            <div class="grid-item grid-col-start-8 grid-col-end-12 align-self-center">
-                <p class="section-tag">Workshops</p>
-                <h2 class="section-title">Expert Knowledge Sharing</h2>
-                <p class="section-text">Experts sharing knowledge about cutting-edge technologies, and providing hands-on training to enhance skills and capabilities.</p>
-                <div class="button-group">
-                    <a href="#contact" class="button button-dark">Register Now</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Service Details Section 2 -->
-    <section class="service-details-section alignfull">
-        <div class="grid-container alignwide">
-            <div class="grid-item grid-col-start-2 grid-col-end-6 align-self-center">
-                <p class="section-tag">Product Strategy</p>
-                <h2 class="section-title">User-Centered Design</h2>
-                <p class="section-text">For users, we analyze digital products and services to improve their user-centered design. For owners, we help refactor product design to reduce inefficiencies and optimize for cost.</p>
-                <div class="button-group">
-                    <a href="#contact" class="button button-dark">Get Started</a>
-                    <a href="#about" class="button button-outline">More Info</a>
-                </div>
-            </div>
-            <div class="grid-item grid-col-start-7 grid-col-end-12 align-self-start">
-                <figure class="image-wrapper">
-                    <img src="https://themes.ainoblocks.io/solarone/wp-content/uploads/sites/4/2023/02/solarone-featured-03.png" alt="Product Strategy">
-                </figure>
-            </div>
-        </div>
-    </section>
-
-
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="grid-container">
-                    <div class="grid-item grid-col-start-4 grid-col-end-10 text-center">
-                        <h3>Join our monthly newsletter to receive the latest news.</h3>
-                        <p class="footer-newsletter-text">No spam, unsubscribe at any time.</p>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo-section">
+                    <img src="images/logo small png.png" alt="HCC Logo" class="footer-logo">
+                    <div class="footer-address">
+                        IIIT Delhi, New Delhi, 110020
+                    </div>
+                    <div class="footer-social-icons">
+                        <a href="#" aria-label="X (Twitter)">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="footer-main">
-            <div class="container">
-                <div class="grid-container">
-                    <div class="grid-item grid-col-start-2 grid-col-end-4">
-                        <div class="flex-container flex-row align-items-center">
-                            <div class="flex-item pr-3">
-                                <h3 class="footer-title">HCC</h3>
-                            </div>
-                            <div class="flex-item">
-                                <h3 class="footer-title">Center of Excellence</h3>
-                            </div>
-                        </div>
+                
+                <div class="footer-links-section">
+                    <h3 class="footer-heading">Links</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="#about">People</a></li>
+                        <li><a href="#services">Publications</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services-section">
+                    <h3 class="footer-heading">Services</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Workshops</a></li>
+                        <li><a href="#">Product Strategy</a></li>
+                        <li><a href="#">Research & Development</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact-section">
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-label">Email:</span>
+                        <a href="mailto:chcc@iiitd.ac.in" class="footer-contact-value">chcc@iiitd.ac.in</a>
                     </div>
-                    <div class="grid-item grid-col-start-6 grid-col-end-8">
-                        <div class="footer-links">
-                            <h4>Links</h4>
-                            <p><a href="#about">About us</a></p>
-                            <p><a href="#services">Services</a></p>
-                            <p><a href="#contact">Contact</a></p>
-                        </div>
-                    </div>
-                    <div class="grid-item grid-col-start-8 grid-col-end-10">
-                        <div class="footer-services">
-                            <h4>Services</h4>
-                            <p>Workshops</p>
-                            <p>Product Strategy</p>
-                            <p>Research & Development</p>
-                        </div>
-                    </div>
-                    <div class="grid-item grid-col-start-10 grid-col-end-12">
-                        <div class="footer-contact">
-                            <h4>Contact</h4>
-                            <p>Email: info@hcc-excellence.org</p>
-                            <p>Phone: +1 (555) 123-4567</p>
-                        </div>
-                    </div>
-                    <div class="grid-item grid-col-start-9 grid-col-end-12 pt-13">
-                        <div class="social-icons">
-                            <ul>
-                                <li><a href="#" aria-label="Twitter"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M22.23,5.924c-0.736,0.326-1.527,0.547-2.357,0.646c0.847-0.508,1.498-1.312,1.804-2.27c-0.793,0.47-1.671,0.812-2.606,0.996C18.324,4.498,17.257,4,16.077,4c-2.266,0-4.103,1.837-4.103,4.103c0,0.322,0.036,0.635,0.106,0.935C8.67,8.867,5.647,7.234,3.623,4.751C3.27,5.357,3.067,6.062,3.067,6.814c0,1.424,0.724,2.679,1.825,3.415c-0.673-0.021-1.305-0.206-1.859-0.513c0,0.017,0,0.034,0,0.052c0,1.988,1.414,3.647,3.292,4.023c-0.344,0.094-0.707,0.144-1.081,0.144c-0.264,0-0.521-0.026-0.772-0.074c0.522,1.63,2.038,2.816,3.833,2.85c-1.404,1.1-3.174,1.756-5.096,1.756c-0.331,0-0.658-0.019-0.979-0.057c1.816,1.164,3.973,1.843,6.29,1.843c7.547,0,11.675-6.252,11.675-11.675c0-0.178-0.004-0.355-0.012-0.531C20.985,7.47,21.68,6.747,22.23,5.924z"></path></svg></a></li>
-                                <li><a href="#" aria-label="LinkedIn"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a></li>
-                                <li><a href="#" aria-label="GitHub"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12,2C6.477,2,2,6.477,2,12c0,4.419,2.865,8.166,6.839,9.489c0.5,0.09,0.682-0.218,0.682-0.484c0-0.236-0.009-0.866-0.014-1.699c-2.782,0.602-3.369-1.34-3.369-1.34c-0.455-1.157-1.11-1.465-1.11-1.465c-0.909-0.62,0.069-0.608,0.069-0.608c1.004,0.071,1.532,1.03,1.532,1.03c0.891,1.529,2.341,1.089,2.91,0.833c0.091-0.647,0.349-1.086,0.635-1.337c-2.22-0.251-4.555-1.111-4.555-4.943c0-1.091,0.39-1.984,1.03-2.682C6.546,8.54,6.202,7.524,6.746,6.148c0,0,0.84-0.269,2.75,1.025C10.295,6.95,11.15,6.84,12,6.836c0.85,0.004,1.705,0.114,2.504,0.336c1.909-1.294,2.748-1.025,2.748-1.025c0.546,1.376,0.202,2.394,0.1,2.646c0.64,0.699,1.026,1.591,1.026,2.682c0,3.841-2.337,4.687-4.565,4.935c0.359,0.307,0.679,0.917,0.679,1.852c0,1.335-0.012,2.415-0.012,2.741c0,0.269,0.18,0.579,0.688,0.481C19.138,20.161,22,16.416,22,12C22,6.477,17.523,2,12,2z"></path></svg></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="grid-item grid-col-start-2 grid-col-end-9 mt-10 pt-8">
-                        <div class="footer-bottom">
-                            <p>&copy; 2023 Center of Excellence Human-Centered Computing. All rights reserved.</p>
-                        </div>
-                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2023 Center of Excellence Human-Centered Computing. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript for animations -->
+    <script>
+        // Improved JavaScript with immediate reset when scrolling out of view
+        $(document).ready(function() {
+            const metricItems = $('.fade-in');
+            let animationTimers = [];
+            let lastScrollTop = 0;
+            
+            // Check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom > 0
+                );
+            }
+            
+            // Animate counter
+            function animateCounter(element) {
+                // Clear any existing animation for this element
+                const index = $(element).closest('.fade-in').index();
+                if (animationTimers[index]) {
+                    clearInterval(animationTimers[index]);
+                }
+                
+                const $number = $(element);
+                const target = parseInt($number.attr('data-count'));
+                const duration = 2000; // 2 seconds
+                let startTime = null;
+                $number.text('0');
+                
+                animationTimers[index] = setInterval(function() {
+                    if (startTime === null) startTime = Date.now();
+                    const elapsedTime = Date.now() - startTime;
+                    
+                    if (elapsedTime >= duration) {
+                        clearInterval(animationTimers[index]);
+                        $number.text(target);
+                        return;
+                    }
+                    
+                    const percentage = elapsedTime / duration;
+                    const currentValue = Math.floor(percentage * target);
+                    $number.text(currentValue);
+                }, 16); // ~60fps
+            }
+            
+            // Immediately reset all counters (no animation)
+            function resetCounters() {
+                metricItems.each(function(index) {
+                    // Immediately clear any running animations
+                    if (animationTimers[index]) {
+                        clearInterval(animationTimers[index]);
+                        animationTimers[index] = null;
+                    }
+                    // Immediately reset the element state
+                    $(this).removeClass('animated');
+                    $(this).find('.metric-number').text('0');
+                });
+            }
+            
+            // Handle scroll event with immediate checking
+            function handleScroll() {
+                const st = window.pageYOffset || document.documentElement.scrollTop;
+                let anyVisible = false;
+                
+                metricItems.each(function() {
+                    if (isInViewport(this)) {
+                        anyVisible = true;
+                        if (!$(this).hasClass('animated')) {
+                            $(this).addClass('animated');
+                            animateCounter($(this).find('.metric-number'));
+                        }
+                    } else if ($(this).hasClass('animated')) {
+                        // Immediately reset this specific element if it was animated but is now out of view
+                        const index = $(this).index();
+                        if (animationTimers[index]) {
+                            clearInterval(animationTimers[index]);
+                            animationTimers[index] = null;
+                        }
+                        $(this).removeClass('animated');
+                        $(this).find('.metric-number').text('0');
+                    }
+                });
+                
+                // Store last scroll position for direction detection
+                lastScrollTop = st;
+            }
+            
+            // Attach scroll handler with no delay for immediate response
+            $(window).on('scroll', function() {
+                // Run immediately without setTimeout
+                handleScroll();
+            });
+            
+            // Initial check
+            handleScroll();
+            
+            // Mobile menu toggle
+            $('.mobile-menu-toggle').on('click', function() {
+                $(this).toggleClass('active');
+                $('.main-navigation').toggleClass('active');
+            });
+
+            // Carousel functionality
+            const $banners = $('.banner-container');
+            const $indicators = $('.indicator');
+            const $prevBtn = $('.carousel-control.prev');
+            const $nextBtn = $('.carousel-control.next');
+            let currentIndex = 0;
+            let interval;
+            const autoPlayDelay = 5000; // 5 seconds between slides
+            
+            // Function to show a specific slide
+            function showSlide(index) {
+                // Handle index bounds
+                if (index < 0) index = $banners.length - 1;
+                if (index >= $banners.length) index = 0;
+                
+                // Update current index
+                currentIndex = index;
+                
+                // Remove active class from all slides and indicators
+                $banners.removeClass('active');
+                $indicators.removeClass('active');
+                
+                // Add active class to current slide and indicator
+                $banners.eq(currentIndex).addClass('active');
+                $indicators.eq(currentIndex).addClass('active');
+            }
+            
+            // Function to advance to the next slide
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+            
+            // Function to go back to the previous slide
+            function prevSlide() {
+                showSlide(currentIndex - 1);
+            }
+            
+            // Set up auto-play
+            function startAutoPlay() {
+                interval = setInterval(nextSlide, autoPlayDelay);
+            }
+            
+            function stopAutoPlay() {
+                clearInterval(interval);
+            }
+            
+            // Event listeners for controls
+            $nextBtn.on('click', function() {
+                nextSlide();
+                stopAutoPlay();
+                startAutoPlay(); // Reset the timer
+            });
+            
+            $prevBtn.on('click', function() {
+                prevSlide();
+                stopAutoPlay();
+                startAutoPlay(); // Reset the timer
+            });
+            
+            // Event listeners for indicators
+            $indicators.each(function(index) {
+                $(this).on('click', function() {
+                    showSlide(index);
+                    stopAutoPlay();
+                    startAutoPlay(); // Reset the timer
+                });
+            });
+            
+            // Pause autoplay on hover
+            $('.carousel-container').hover(
+                function() { stopAutoPlay(); },
+                function() { startAutoPlay(); }
+            );
+            
+            // Start the carousel
+            showSlide(currentIndex);
+            startAutoPlay();
+        });
+    </script>
 </body>
 </html> 
