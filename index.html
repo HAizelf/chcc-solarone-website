@@ -1,164 +1,1132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Center of Excellence Human-Centered Computing</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <title>About Us - CHCC | Center of Excellence for Human-Centered Computing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #2D3E50;
+            --accent-color: #3498db;
+            --accent-gradient: linear-gradient(135deg, #3498db, #2980b9);
+            --secondary-color: #566573;
+            --light-bg: #f8f9fa;
+            --dark-bg: #2c3e50;
+            --light-text: #ffffff;
+            --dark-text: #333333;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --section-padding: 100px 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding: 0 20px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    height: 65px;
+    margin-right: 15px;
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.main-navigation ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-navigation li {
+    margin: 0 20px;
+}
+
+.main-navigation a {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 10px 0;
+}
+
+.main-navigation a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.main-navigation a:hover::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+        /* Hero Section */
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: var(--light-text);
+            padding: 180px 0 120px;
+            margin-top: 0;
+            overflow: hidden;
+            padding-top: 120px;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(45, 62, 80, 0.9), rgba(52, 152, 219, 0.8));
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: var(--light-text);
+            opacity: 0.7;
+            font-size: 1.5rem;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) translateX(-50%); }
+            50% { transform: translateY(-20px) translateX(-50%); }
+        }
+
+        /* Section Styles */
+        section {
+            padding: var(--section-padding);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-subtitle {
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 40px;
+        }
+
+        .grid-item {
+            grid-column: auto / span 12;
+        }
+
+        /* About Section */
+        .about-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: -300px;
+            right: -300px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(52, 152, 219, 0.05) 0%, rgba(52, 152, 219, 0) 70%);
+            z-index: -1;
+        }
+
+        .about-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-gradient);
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: var(--secondary-color);
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            height: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Strategy Section */
+        .strategy-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+            margin-top: 100px;
+        }
+
+        .strategy-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            flex-direction: row-reverse; /* Reverse the direction to have image on right */
+        }
+
+        .strategy-image {
+            flex: 1;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .strategy-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .strategy-card {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .strategy-card h2 {
+            color: #2D3E50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .strategy-card h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .strategy-card p {
+            color: #566573;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        /* Services Section */
+        .services-section {
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            border-top: 4px solid transparent;
+            z-index: 1;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background: var(--accent-gradient);
+            transition: var(--transition);
+            opacity: 0.03;
+            z-index: -1;
+            border-radius: var(--border-radius);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .service-card:hover::before {
+            height: 100%;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 0;
+        }
+        
+        .service-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: var(--accent-gradient);
+        }
+        
+        .service-card p {
+            color: var(--secondary-color);
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: #f8f9fa;
+            color: var(--dark-text);
+            padding: 70px 0;
+            position: relative;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .cta-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .cta-content {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .cta-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2D3E50;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .cta-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .cta-description {
+            font-size: 1rem;
+            color: #566573;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .cta-button-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .cta-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cta-content {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .cta-title:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Footer Styles */
+        .site-footer {
+    background-color: #121212;
+    color: #ffffff;
+    padding: 60px 0 30px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+}
+
+.footer-logo-section {
+    grid-column: span 4;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer-address {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+.footer-links-section {
+    grid-column: span 2;
+    margin-bottom: 20px;
+}
+
+.footer-services-section {
+    grid-column: span 3;
+    margin-bottom: 20px;
+}
+
+.footer-contact-section {
+    grid-column: span 3;
+    margin-bottom: 20px;
+}
+
+.footer-heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #ffffff;
+    position: relative;
+}
+
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-list li {
+    margin-bottom: 12px;
+}
+
+.footer-links-list a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+.footer-links-list a:hover {
+    color: #ffffff;
+}
+
+.footer-contact-item {
+    margin-bottom: 15px;
+    color: #cccccc;
+}
+
+.footer-contact-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.footer-contact-value {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact-value:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: #999999;
+    font-size: 0.9rem;
+}
+
+/* Social icons in footer */
+.footer-social-icons {
+    display: flex;
+    margin-top: 20px;
+}
+
+.footer-social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-social-icons svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+}
+
+@media (max-width: 992px) {
+    .footer-logo-section {
+        grid-column: span 12;
+    }
+    
+    .footer-links-section,
+    .footer-services-section,
+    .footer-contact-section {
+        grid-column: span 4;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-links-section,
+    .footer-services-section,
+    .footer-contact-section {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-links-section,
+    .footer-services-section,
+    .footer-contact-section {
+        grid-column: span 12;
+    }
+}
+
+        /* Responsive Styles */
+        @media (min-width: 768px) {
+            .grid-col-start-1 { grid-column-start: 1; }
+            .grid-col-start-6 { grid-column-start: 6; }
+            .grid-col-start-7 { grid-column-start: 7; }
+            
+            .grid-col-end-6 { grid-column-end: 6; }
+            .grid-col-end-7 { grid-column-end: 7; }
+            .grid-col-end-13 { grid-column-end: 13; }
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .service-card {
+                padding: 30px 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                gap: 20px;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu a {
+                font-size: 1.2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .grid-container {
+                gap: 30px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-content h2, .strategy-content h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cta-content {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .cta-title:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* New Banner Styles Inspired by IIIT-Delhi */
+        .about-banner {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            margin-top: 80px; /* To account for fixed header */
+            background-color: #f8f9fa; /* Match this to your page background */
+        }
+
+        .about-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block; /* Removes any potential inline spacing */
+            position: absolute; /* This ensures the image fills the entire container */
+            top: 0;
+            left: 0;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .banner-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(45, 62, 80, 0.8);
+            color: white;
+            padding: 20px 40px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            min-width: 300px;
+        }
+
+        /* Info Section with Card Sticking to Image */
+        .info-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .info-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .info-image {
+            flex: 1;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .info-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-card {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .info-card h2 {
+            color: #2D3E50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .info-card h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .info-card p {
+            color: #566573;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        /* Responsive adjustments for the new sections */
+        @media (max-width: 992px) {
+            .info-container {
+                flex-direction: column;
+            }
+            
+            .info-card {
+                position: relative;
+                top: -50px;
+                transform: none;
+                margin: 0 20px;
+                max-width: calc(100% - 40px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner-title {
+                font-size: 2rem;
+                padding: 15px 30px;
+            }
+            
+            .info-image {
+                height: 400px;
+            }
+            
+            .info-card {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .banner-title {
+                font-size: 1.5rem;
+                padding: 10px 20px;
+                min-width: 250px;
+            }
+            
+            .info-image {
+                height: 300px;
+            }
+            
+            .info-card {
+                top: -30px;
+                padding: 20px;
+            }
+        }
+
+        /* Add this to your CSS section */
+        .content-wrapper {
+            background-color: white;
+            padding: 60px 0;
+        }
+
+        /* Update these section styles */
+        .info-section, .strategy-section {
+            padding: 40px 0;
+            background-color: transparent; /* Remove the different backgrounds */
+        }
+
+        /* Make sure the cards have consistent styling */
+        .info-card, .strategy-card {
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            z-index: 2;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="site-header">
         <div class="container header-container">
             <div class="logo-wrapper">
                 <a href="#" class="logo-link">
-                    <img src="images/logo small png.png" alt="CHCC Logo" class="site-logo">
+                    <img src="images/logo small png.png" alt="HCC Logo" class="site-logo">
                 </a>
             </div>
             <nav class="main-navigation">
                 <ul>
-                    <li><a href="https://chcc.ai/">Home</a></li>
-                    <li><a href="https://chcc.ai/people/">People</a></li>
-                    <li><a href="https://chcc.ai/publications/">Publications</a></li>
-                    <li><a href="https://chcc.ai/events/">Events</a></li>
+                    <li><a href="#about">Home</a></li>
+                    <li><a href="#services">Publications</a></li>
+                    <li><a href="events/">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <!-- Hero Section (Banner Carousel) with Integrated Tagline -->
-    <section class="hero-section alignfull">
-        <div class="carousel-container">
-            <!-- Banner 1 with the specified image -->
-            <div class="banner-container active">
-                <div class="banner-image">
-                    <img src="images/entity locker awareness workshop-06 (1).jpg" alt="Entity Locker Awareness Workshop" class="hero-image">
+    
+    <!-- New Banner Section Inspired by IIIT-Delhi -->
+    <section class="about-banner">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="CHCC Campus">
+        <div class="banner-overlay"></div>
+        <div class="banner-title">About CHCC</div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <!-- Wrap both info sections in a container with consistent background -->
+    <div class="content-wrapper">
+        <!-- Info Section with Card Sticking to Image -->
+        <section class="info-section">
+            <div class="info-container">
+                <div class="info-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="CHCC Team Collaboration">
                 </div>
+                <div class="info-card">
+                    <h2>CHCC</h2>
+                    <p>The <strong>Center for Human-Centered Computing (CHCC)</strong> is an interdisciplinary research collective that conducts cutting-edge research to design technology with and for people. We take a participatory, user-centered approach to building systems that respond to real-world needs. 
+                    </p>
+                    <p>At CHCC, our work spans across domains in Human-AI interaction, mobile sensing, healthcare, education, ubiquitous computing, and digital public infrastructure. We develop technologies that are context-aware, culturally grounded, and aimed at driving meaningful societal impact. 
+                    </p>
+                    <p>We also collaborate across academia, government, and not-for-profits to ensure that our solutions are both research-driven and rooted in everyday realities.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <section class="strategy-section">
+            <div class="strategy-container">
+                <div class="strategy-image">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Product Strategy">
+                </div>
+                <div class="strategy-card">
+                    <h2>Product Strategy Unit</h2>
+                    <p>We specialize in human-centered computing, conducting research that focuses on creating products and services that meet real human needs. Our product strategy team helps organizations develop user-centered approaches to technology development.</p>
+                    <p>We specialize in human-centered computing, conducting research that focuses on creating products and services that meet real human needs. Our product strategy team helps organizations develop user-centered approaches to technology development.</p>
+                    <p>Through a combination of user research, design thinking, and technological expertise, we help our partners create products that are not only functional but also meaningful and impactful for their users.</p>
+                    <p>Through a combination of user research, design thinking, and technological expertise, we help our partners create products that are not only functional but also meaningful and impactful for their users.</p>
+                    <p>Our Product Strategy Unit works closely with industry partners, startups, and public institutions to translate research insights into practical applications that address real-world challenges.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-subtitle">What We Offer</span>
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-description">Expertise and solutions to help you create human-centered technology</p>
             </div>
             
-<!--              -->
-            <!-- Carousel Navigation -->
-            <div class="carousel-indicators">
-                <button class="indicator active" aria-label="Slide 1"></button>
-                <button class="indicator" aria-label="Slide 2"></button>
-                <button class="indicator" aria-label="Slide 3"></button>
-            </div>
-            
-            <!-- Carousel Controls -->
-            <button class="carousel-control prev" aria-label="Previous slide">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
-                </svg>
-            </button>
-            <button class="carousel-control next" aria-label="Next slide">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
-                </svg>
-            </button>
-        </div>
-        
-        <!-- Integrated Tagline Bar -->
-        <div class="tagline-bar">
-            <div class="container">
-                <div class="tagline-text">Developing <span class="highlight">user-centric</span> solutions for tomorrow</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Metrics Section -->
-    <section id="about" class="metrics-section alignfull">
-        <div class="grid-container alignwide">
-            <div class="metrics-container grid-item grid-col-start-2 grid-col-end-12">
-                <div class="metrics-grid">
-                    <div class="metric-item fade-in">
-                        <div class="metric-number" data-count="4">0</div>
-                        <div class="metric-label">Research Projects</div>
-                    </div>
-                    <div class="metric-item fade-in">
-                        <div class="metric-number" data-count="114">0</div>
-                        <div class="metric-label">Publications</div>
-                    </div>
-                    <div class="metric-item fade-in">
-                        <div class="metric-number" data-count="10">0</div>
-                        <div class="metric-label">Industry Partners</div>
-                    </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <span class="service-icon">
+                        <i class="fas fa-flask"></i>
+                    </span>
+                    <h3>Research & Development</h3>
+                </div>
+                <div class="service-card fade-in">
+                    <span class="service-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </span>
+                    <h3>Workshops & Training</h3>
+                </div>
+                <div class="service-card fade-in">
+                    <span class="service-icon">
+                        <i class="fas fa-comments"></i>
+                    </span>
+                    <h3>Consulting Services</h3>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- News and Twitter Section -->
-    <section id="news" class="news-section alignfull">
-        <div class="grid-container alignwide">
-            <div class="grid-item grid-col-start-2 grid-col-end-12 text-center">
-                <h2 class="section-title">News & Announcements</h2>
+    
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Collaborate?</h2>
+                <p class="cta-description">Connect with CHCC by mail (chcc@iiitd.ac.in) to explore how our human-centered approach can enhance your technology solutions and research initiatives.</p>
             </div>
-            <div class="grid-item grid-col-start-2 grid-col-end-8">
-                <div class="news-content">
-                    <article class="news-item featured">
-                        <div class="news-image">
-                            <img src="https://www.gatesfoundation.org/-/media/gfo/3about/4offices/officeindia_ga1346014_vs479101_3200x1800.jpg?rev=bf0fcc71579f444d99756208f40acc81&w=2400&hash=3DCE68CFA1E9F61718F22A79F77874FE" alt="Research Grant">
-                        </div>
-                        <div class="news-content-container">
-                            <div class="news-date">May 15, 2023</div>
-                            <h3 class="news-title">New Research Grant Awarded</h3>
-                            <p class="news-excerpt">Our center has been awarded a $2.5 million grant to research advanced human-computer interaction techniques for accessibility. This funding will support our work on developing new interfaces for users with visual impairments.</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </article>
-                    <article class="news-item">
-                        <div class="news-content-container">
-                            <div class="news-date">April 28, 2023</div>
-                            <h3 class="news-title">Publication in ACM CHI Conference</h3>
-                            <p class="news-excerpt">Our researchers presented three papers at the prestigious CHI conference, focusing on novel interaction techniques.</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </article>
-                    <article class="news-item">
-                        <div class="news-content-container">
-                            <div class="news-date">March 10, 2023</div>
-                            <h3 class="news-title">Industry Partnership Announcement</h3>
-                            <p class="news-excerpt">We're excited to announce a new partnership with TechInnovate to develop user-centered AI solutions.</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            <div class="grid-item grid-col-start-8 grid-col-end-12">
-                <div class="twitter-feed">
-                    <h3 class="twitter-title">
-                        <svg class="x-logo" viewBox="0 0 24 24">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-                        </svg>
-                        Latest Updates
-                    </h3>
-                   <blockquote class="twitter-tweet"><p lang="en" dir="ltr">📢 Join us at CHCC on May 5, 2025, for the Awareness Workshop on Entity Locker!<br><br>Learn about document migration, enterprise implementation strategies, and secure access techniques.<br><br>Register here: <a href="https://t.co/Hlip1bbj5u">https://t.co/Hlip1bbj5u</a> <a href="https://twitter.com/hashtag/CHCC?src=hash&amp;ref_src=twsrc%5Etfw">#CHCC</a> <a href="https://twitter.com/hashtag/EntityLocker?src=hash&amp;ref_src=twsrc%5Etfw">#EntityLocker</a> <a href="https://twitter.com/hashtag/EnterpriseTech?src=hash&amp;ref_src=twsrc%5Etfw">#EnterpriseTech</a></p>&mdash; Center of Excellence Human-Centered Computing (@CHCC_IIITD) <a href="https://twitter.com/CHCC_IIITD/status/1914244459061207543?ref_src=twsrc%5Etfw">April 21, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
-                
-                <div class="upcoming-events">
-                    <h3 class="upcoming-events-title">Upcoming Events</h3>
-                    <div class="event-mini">
-                        <div class="event-mini-date">June 15, 2023</div>
-                        <div class="event-mini-title">Workshop on Human-AI Interaction</div>
-                        <p>A half-day workshop exploring the latest techniques in human-AI collaboration.</p>
-                    </div>
-                    <div class="event-mini">
-                        <div class="event-mini-date">July 8, 2023</div>
-                        <div class="event-mini-title">Summer Research Symposium</div>
-                        <p>Undergraduate students present their summer research projects.</p>
-                    </div>
-                    <a href="events/" class="view-all-link">View All Events →</a>
-                </div>
-            </div>
+            <!-- <div class="cta-button-wrapper">
+                <a href="mailto: chcc@iiitd.ac.in" class="cta-button">Contact Us</a>
+            </div> -->
         </div>
     </section>
-
-    <!-- Footer -->
+    
     <footer class="site-footer">
         <div class="container">
             <div class="footer-container">
@@ -218,188 +1186,62 @@
         </div>
     </footer>
 
-    <!-- JavaScript for animations -->
-    <script>
-        // Improved JavaScript with immediate reset when scrolling out of view
-        $(document).ready(function() {
-            const metricItems = $('.fade-in');
-            let animationTimers = [];
-            let lastScrollTop = 0;
-            
-            // Check if element is in viewport
-            function isInViewport(element) {
-                const rect = element.getBoundingClientRect();
-                return (
-                    rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.bottom > 0
-                );
-            }
-            
-            // Animate counter
-            function animateCounter(element) {
-                // Clear any existing animation for this element
-                const index = $(element).closest('.fade-in').index();
-                if (animationTimers[index]) {
-                    clearInterval(animationTimers[index]);
-                }
-                
-                const $number = $(element);
-                const target = parseInt($number.attr('data-count'));
-                const duration = 2000; // 2 seconds
-                let startTime = null;
-                $number.text('0');
-                
-                animationTimers[index] = setInterval(function() {
-                    if (startTime === null) startTime = Date.now();
-                    const elapsedTime = Date.now() - startTime;
-                    
-                    if (elapsedTime >= duration) {
-                        clearInterval(animationTimers[index]);
-                        $number.text(target);
-                        return;
-                    }
-                    
-                    const percentage = elapsedTime / duration;
-                    const currentValue = Math.floor(percentage * target);
-                    $number.text(currentValue);
-                }, 16); // ~60fps
-            }
-            
-            // Immediately reset all counters (no animation)
-            function resetCounters() {
-                metricItems.each(function(index) {
-                    // Immediately clear any running animations
-                    if (animationTimers[index]) {
-                        clearInterval(animationTimers[index]);
-                        animationTimers[index] = null;
-                    }
-                    // Immediately reset the element state
-                    $(this).removeClass('animated');
-                    $(this).find('.metric-number').text('0');
-                });
-            }
-            
-            // Handle scroll event with immediate checking
-            function handleScroll() {
-                const st = window.pageYOffset || document.documentElement.scrollTop;
-                let anyVisible = false;
-                
-                metricItems.each(function() {
-                    if (isInViewport(this)) {
-                        anyVisible = true;
-                        if (!$(this).hasClass('animated')) {
-                            $(this).addClass('animated');
-                            animateCounter($(this).find('.metric-number'));
-                        }
-                    } else if ($(this).hasClass('animated')) {
-                        // Immediately reset this specific element if it was animated but is now out of view
-                        const index = $(this).index();
-                        if (animationTimers[index]) {
-                            clearInterval(animationTimers[index]);
-                            animationTimers[index] = null;
-                        }
-                        $(this).removeClass('animated');
-                        $(this).find('.metric-number').text('0');
-                    }
-                });
-                
-                // Store last scroll position for direction detection
-                lastScrollTop = st;
-            }
-            
-            // Attach scroll handler with no delay for immediate response
-            $(window).on('scroll', function() {
-                // Run immediately without setTimeout
-                handleScroll();
-            });
-            
-            // Initial check
-            handleScroll();
-            
-            // Mobile menu toggle
-            $('.mobile-menu-toggle').on('click', function() {
-                $(this).toggleClass('active');
-                $('.main-navigation').toggleClass('active');
-            });
 
-            // Carousel functionality
-            const $banners = $('.banner-container');
-            const $indicators = $('.indicator');
-            const $prevBtn = $('.carousel-control.prev');
-            const $nextBtn = $('.carousel-control.next');
-            let currentIndex = 0;
-            let interval;
-            const autoPlayDelay = 5000; // 5 seconds between slides
-            
-            // Function to show a specific slide
-            function showSlide(index) {
-                // Handle index bounds
-                if (index < 0) index = $banners.length - 1;
-                if (index >= $banners.length) index = 0;
-                
-                // Update current index
-                currentIndex = index;
-                
-                // Remove active class from all slides and indicators
-                $banners.removeClass('active');
-                $indicators.removeClass('active');
-                
-                // Add active class to current slide and indicator
-                $banners.eq(currentIndex).addClass('active');
-                $indicators.eq(currentIndex).addClass('active');
+    <script>
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.site-header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
             }
-            
-            // Function to advance to the next slide
-            function nextSlide() {
-                showSlide(currentIndex + 1);
-            }
-            
-            // Function to go back to the previous slide
-            function prevSlide() {
-                showSlide(currentIndex - 1);
-            }
-            
-            // Set up auto-play
-            function startAutoPlay() {
-                interval = setInterval(nextSlide, autoPlayDelay);
-            }
-            
-            function stopAutoPlay() {
-                clearInterval(interval);
-            }
-            
-            // Event listeners for controls
-            $nextBtn.on('click', function() {
-                nextSlide();
-                stopAutoPlay();
-                startAutoPlay(); // Reset the timer
+        });
+        
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        if (mobileMenuBtn) {
+            const mainNav = document.querySelector('.main-navigation ul');
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                this.classList.toggle('active');
             });
+        }
+        
+        // Fade-in Animation on Scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
             
-            $prevBtn.on('click', function() {
-                prevSlide();
-                stopAutoPlay();
-                startAutoPlay(); // Reset the timer
-            });
-            
-            // Event listeners for indicators
-            $indicators.each(function(index) {
-                $(this).on('click', function() {
-                    showSlide(index);
-                    stopAutoPlay();
-                    startAutoPlay(); // Reset the timer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
                 });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
             });
-            
-            // Pause autoplay on hover
-            $('.carousel-container').hover(
-                function() { stopAutoPlay(); },
-                function() { startAutoPlay(); }
-            );
-            
-            // Start the carousel
-            showSlide(currentIndex);
-            startAutoPlay();
+        });
+        
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
 </body>
-</html> 
+</html>
